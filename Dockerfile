@@ -17,7 +17,8 @@ USER django
 
 RUN make build_sandbox
 
-RUN cp --remove-destination /app/src/oscar/static/oscar/img/image_not_found.jpg /app/sandbox/public/media/
+#RUN cp --remove-destination /app/src/oscar/static/oscar/img/image_not_found.jpg /app/sandbox/public/media/
 
 WORKDIR /app/sandbox/
-CMD uwsgi --ini uwsgi.ini
+#CMD uwsgi --ini uwsgi.ini
+CMD python manage.py runserver 0.0.0.0:8000

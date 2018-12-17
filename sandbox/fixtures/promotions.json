@@ -21,22 +21,6 @@
     "fields": {
         "content_type": [
             "promotions",
-            "singleproduct"
-        ],
-        "object_id": 1,
-        "position": "page",
-        "display_order": 0,
-        "clicks": 0,
-        "date_created": "2014-05-06T10:31:23.577Z",
-        "page_url": "/en-gb/"
-    }
-},
-{
-    "model": "promotions.pagepromotion",
-    "pk": 6,
-    "fields": {
-        "content_type": [
-            "promotions",
             "handpickedproductlist"
         ],
         "object_id": 1,
@@ -58,21 +42,11 @@
     }
 },
 {
-    "model": "promotions.singleproduct",
-    "pk": 1,
-    "fields": {
-        "name": "Recommended reading",
-        "product": 89,
-        "description": "Commodo sed artisan before they sold out veniam aute sint you probably haven't heard of them pour-over, +1 delectus street art direct trade. Enim craft beer odd future single-origin coffee gluten-free artisan, salvia consectetur master cleanse vegan eiusmod carles. Yr proident ennui VHS, art party direct trade veniam est try-hard voluptate. Authentic irure aliqua, pariatur ad whatever sunt banjo esse letterpress plaid bicycle rights mollit quinoa you probably haven't heard of them. Farm-to-table keytar duis, craft beer carles lomo est accusamus single-origin coffee. Swag twee magna, literally meh cred cray. Aute deserunt ullamco, you probably haven't heard of them nisi synth DIY food truck.<br>",
-        "date_created": "2013-01-08T17:14:56.664Z"
-    }
-},
-{
     "model": "promotions.handpickedproductlist",
     "pk": 1,
     "fields": {
-        "name": "Other good books",
-        "description": "Commodo sed artisan before they sold out veniam aute sint you probably haven't heard of them pour-over, +1 delectus street art direct trade. Enim craft beer odd future single-origin coffee gluten-free artisan, salvia consectetur master cleanse vegan eiusmod carles. Yr proident ennui VHS, art party direct trade veniam est try-hard voluptate. Authentic irure aliqua, pariatur ad whatever sunt banjo esse letterpress plaid bicycle rights mollit quinoa you probably haven't heard of them. Farm-to-table keytar duis, craft beer carles lomo est accusamus single-origin coffee. Swag twee magna, literally meh cred cray. Aute deserunt ullamco, you probably haven't heard of them nisi synth DIY food truck.<br><br>",
+        "name": "Most Popular",
+        "description": "A selection of our most popular Nutanix clothing and products.<br><br>",
         "link_url": "",
         "link_text": "",
         "date_created": "2013-01-08T17:19:57.759Z"
@@ -83,7 +57,7 @@
     "pk": 1,
     "fields": {
         "list": 1,
-        "product": 25,
+        "product": 211,
         "display_order": 0
     }
 },
@@ -92,7 +66,7 @@
     "pk": 2,
     "fields": {
         "list": 1,
-        "product": 51,
+        "product": 212,
         "display_order": 0
     }
 },
@@ -101,7 +75,7 @@
     "pk": 3,
     "fields": {
         "list": 1,
-        "product": 95,
+        "product": 213,
         "display_order": 0
     }
 },
@@ -110,7 +84,7 @@
     "pk": 4,
     "fields": {
         "list": 1,
-        "product": 13,
+        "product": 214,
         "display_order": 0
     }
 }

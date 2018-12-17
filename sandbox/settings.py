@@ -15,6 +15,7 @@ ALLOWED_HOSTS = [
     'master.oscarcommerce.com',
     'localhost',
     '127.0.0.1',
+    '*',
 ]
 
 # This is needed for the hosted version of the sandbox
@@ -27,15 +28,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MANAGERS = ADMINS
 
-# Use a Sqlite database by default
+# Nutanix Era
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.environ.get('DATABASE_NAME', location('db.sqlite')),
-        'USER': os.environ.get('DATABASE_USER', None),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', None),
-        'HOST': os.environ.get('DATABASE_HOST', None),
-        'PORT': os.environ.get('DATABASE_PORT', None),
+        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql'),
+        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django'),
+        'USER': os.environ.get('DATABASE_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'ThisIsAVeryLongAndStrongPasswordOK'),
+        'HOST': os.environ.get('DATABASE_HOST', '10.20.140.27'),
+        'PORT': os.environ.get('DATABASE_PORT', '5432'),
         'ATOMIC_REQUESTS': True
     }
 }
@@ -100,16 +101,19 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = location("public/media")
+#MEDIA_ROOT = location("public/media")
+MEDIA_ROOT = './media_files/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
+#OSCAR_MISSING_IMAGE_URL = MEDIA_URL + 'image_not_found.jpg'
+OSCAR_MISSING_IMAGE_URL = MEDIA_ROOT + 'image_not_found.jpg'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = location('public/static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATIC_ROOT = location('public/static')
+STATIC_ROOT = './static_files/'
 STATICFILES_DIRS = (
     location('static/'),
 )
@@ -118,8 +122,28 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+# 'HOST': os.environ.get('DATABASE_HOST', '10.4.220.249')
+
+#boto3
+AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY', 'poseidon_access')
+AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY', 'poseidon_secret')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('STATIC_BUCKET', 'oscarstatic')
+AWS_AUTO_CREATE_BUCKET = os.environ.get('AUTO_CREATE_BUCKET', True)
+#AWS_DEFAULT_ACL = os.environ.get('DEFAULT_ACL', "public-read")
+AWS_DEFAULT_ACL = os.environ.get('DEFAULT_ACL', None)
+AWS_QUERYSTRING_AUTH = os.environ.get('QUERYSTRING_AUTH', True)
+AWS_S3_USE_SSL = os.environ.get('S3_USE_SSL', False)
+AWS_S3_REGION_NAME = os.environ.get('S3_REGION_NAME', None)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = os.environ.get('LOCATION', 'static')
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.20.132.116:7200/')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
+SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$rspnpxc!ar&p#!)o2b'
 
 TEMPLATES = [
     {
@@ -271,6 +295,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django_extensions',
+    'storages',
 
     # Debug toolbar + extensions
     'debug_toolbar',
@@ -337,10 +362,14 @@ INTERNAL_IPS = ['127.0.0.1', '::1']
 
 from oscar.defaults import *
 
+# Shop settings
+if os.environ.get('S3_ENDPOINT_URL') == 'http://s3.amazonaws.com':
+    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on AWS')
+else:
+    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
+
 # Meta
 # ====
-
-OSCAR_SHOP_TAGLINE = 'Sandbox'
 
 OSCAR_RECENTLY_VIEWED_PRODUCTS = 20
 OSCAR_ALLOW_ANON_CHECKOUT = True
