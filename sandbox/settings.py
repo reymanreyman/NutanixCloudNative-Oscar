@@ -366,7 +366,7 @@ from oscar.defaults import *
 if os.environ.get('S3_ENDPOINT_URL') == 'http://s3.amazonaws.com':
     OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on AWS')
 else:
-    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
+    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native, built by Calm Jenkins Plugin')
 
 # Meta
 # ====
