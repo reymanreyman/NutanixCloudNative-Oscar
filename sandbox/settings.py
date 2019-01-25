@@ -32,10 +32,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django'),
+        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django_201901231400'),
         'USER': os.environ.get('DATABASE_USER', 'postgres'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'ThisIsAVeryLongAndStrongPasswordOK'),
-        'HOST': os.environ.get('DATABASE_HOST', '10.20.140.27'),
+        'HOST': os.environ.get('DATABASE_HOST', '10.45.100.160'),
         'PORT': os.environ.get('DATABASE_PORT', '5432'),
         'ATOMIC_REQUESTS': True
     }
@@ -139,7 +139,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_LOCATION = os.environ.get('LOCATION', 'static')
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.20.132.116:7200/')
+AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.45.5.41:7200/')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Make this unique, and don't share it with anybody.
