@@ -13,5 +13,8 @@ node("docker") {
         stage "publish"
         app.push 'latest'
         app.push "${commit_id}"
+
+        stage "Launch Calm Blueprint"
+        step([$class: 'BlueprintLaunch', appProfileName: 'Default', applicationName: 'NCN_${BUILD_ID}', blueprintDescription: 'Description is empty', blueprintName: 'NutanixCloudNativeWithDatabaseProvisioning', projectName: 'Demo', runtimeVariables: '{}', waitForSuccessFulLaunch: true])
     }
 }
