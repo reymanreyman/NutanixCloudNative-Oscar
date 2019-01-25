@@ -1,5 +1,5 @@
 node("docker") {
-    docker.withRegistry('', 'bef9483a-47b8-4096-9bce-bc0cdd198b9a') {
+    docker.withRegistry('docker.io', 'bef9483a-47b8-4096-9bce-bc0cdd198b9a') {
     
         git url: "https://drt-it-github-prod-1.eng.nutanix.com/michael-haigh/NutanixCloudNative-Oscar/", credentialsId: 'd8500ae9-87ba-4fdc-bf16-2535b0a51011'
     
