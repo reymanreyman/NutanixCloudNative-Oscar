@@ -7,14 +7,14 @@ node("docker") {
         def commit_id = readFile('.git/commit-id').trim()
         println commit_id
     
-        stage "build"
-        def app = docker.build "michaelatnutanix/oscar_jet"
+        stage "Build"
+        def oscarApp = docker.build "michaelatnutanix/oscar_jet"
     
-        stage "publish"
-        app.push 'latest'
-        app.push "${commit_id}"
+        stage "Publish"
+        oscarApp.push 'latest'
+        oscarApp.push "${commit_id}"
 
-        stage "Launch Calm Blueprint"
+        stage "App Deployment"
         step([$class: 'BlueprintLaunch', appProfileName: 'Default', applicationName: 'NCN_${BUILD_ID}', blueprintDescription: 'Description is empty', blueprintName: 'NutanixCloudNativeWithDatabaseProvisioning', projectName: 'Demo', runtimeVariables: '{}', waitForSuccessFulLaunch: true])
     }
 }
