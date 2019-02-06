@@ -367,7 +367,7 @@ if os.environ.get('S3_ENDPOINT_URL') == 'http://s3.amazonaws.com':
     OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on AWS')
 else:
     # NCN Tagline
-    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
+    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native, Built by Nutanix Calm Jenkins Plugin')
 
 # Meta
 # ====

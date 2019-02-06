@@ -13,5 +13,8 @@ node("docker") {
         stage "Publish"
         oscarApp.push 'latest'
         oscarApp.push "${commit_id}"
+
+        stage "Application Launch"
+        step([$class: 'BlueprintLaunch', appProfileName: 'Default', applicationName: 'NCN_${BUILD_ID}', blueprintDescription: 'Description is empty', blueprintName: 'NutanixCloudNativeDemo', projectName: 'Demo', runtimeVariables: '{}', waitForSuccessFulLaunch: true])
     }
 }
