@@ -32,10 +32,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django_201901231400'),
+        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django_201902060613'),
         'USER': os.environ.get('DATABASE_USER', 'postgres'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'ThisIsAVeryLongAndStrongPasswordOK'),
-        'HOST': os.environ.get('DATABASE_HOST', '10.45.100.160'),
+        'HOST': os.environ.get('DATABASE_HOST', '10.45.100.118'),
         'PORT': os.environ.get('DATABASE_PORT', '5432'),
         'ATOMIC_REQUESTS': True
     }
