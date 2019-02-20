@@ -141,6 +141,7 @@ AWS_LOCATION = os.environ.get('LOCATION', 'static')
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.45.5.41:7200/')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_VERIFY = os.environ.get('S3_VERIFY_CERTS', False)
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$rspnpxc!ar&p#!)o2b'
