@@ -435,7 +435,6 @@ THUMBNAIL_KVSTORE = env(
 THUMBNAIL_REDIS_URL = env('THUMBNAIL_REDIS_URL', default=None)
 
 
-# Comment to trigger git webhook
 # Django 1.6 has switched to JSON serializing for security reasons, but it does not
 # serialize Models. We should resolve this by extending the
 # django/core/serializers/json.Serializer to have the `dumps` function. Also
