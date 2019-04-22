@@ -20,8 +20,7 @@ ALLOWED_HOSTS = [
 
 # This is needed for the hosted version of the sandbox
 ADMINS = (
-    ('David Winterbottom', 'david.winterbottom@gmail.com'),
-    ('Michael van Tellingen', 'michaelvantellingen@gmail.com'),
+    ('Michael Haigh', 'michael@nutanix.com'),
 )
 EMAIL_SUBJECT_PREFIX = '[Oscar sandbox] '
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
