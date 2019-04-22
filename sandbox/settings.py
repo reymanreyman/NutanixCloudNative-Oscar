@@ -362,12 +362,8 @@ INTERNAL_IPS = ['127.0.0.1', '::1']
 
 from oscar.defaults import *
 
-# Shop settings
-if os.environ.get('S3_ENDPOINT_URL') == 'http://s3.amazonaws.com':
-    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on AWS')
-else:
-    # NCN Tagline
-    OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
+# NCN Tagline
+OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
 
 # Meta
 # ====
