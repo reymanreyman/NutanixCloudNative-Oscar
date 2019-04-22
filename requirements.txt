@@ -17,7 +17,8 @@ redis==2.10.6
 requests==2.19.1
 uWSGI==2.0.17.1
 whitenoise==4.1
-boto3==1.9.11
+#boto3==1.9.11
+boto3==1.9.134
 
 # Linting
 flake8==3.5.0
