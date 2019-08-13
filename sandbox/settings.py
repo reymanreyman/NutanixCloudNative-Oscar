@@ -363,7 +363,7 @@ INTERNAL_IPS = ['127.0.0.1', '::1']
 from oscar.defaults import *
 
 # NCN Tagline
-OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native')
+OSCAR_SHOP_TAGLINE = os.environ.get('SHOP_TAGLINE', 'Running on Nutanix Cloud Native, Built for Parallel Wireless Demo')
 
 # Meta
 # ====
