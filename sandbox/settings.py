@@ -124,8 +124,8 @@ STATICFILES_FINDERS = (
 # 'HOST': os.environ.get('DATABASE_HOST', '10.4.220.249')
 
 #boto3
-AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY', 'poseidon_access')
-AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY', 'poseidon_secret')
+AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY', 'VHltnK46FaPUolcyPyF7TFkdoVC8thPk')
+AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY', 'thbKi7thqUPdvJsa4Lyy-Yx-FCo7YnqP')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('STATIC_BUCKET', 'oscarstatic')
 AWS_AUTO_CREATE_BUCKET = os.environ.get('AUTO_CREATE_BUCKET', True)
 #AWS_DEFAULT_ACL = os.environ.get('DEFAULT_ACL', "public-read")
@@ -138,7 +138,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_LOCATION = os.environ.get('LOCATION', 'static')
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.45.5.41:7200/')
+AWS_S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', 'http://10.42.17.148/')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_VERIFY = os.environ.get('S3_VERIFY_CERTS', False)
 
