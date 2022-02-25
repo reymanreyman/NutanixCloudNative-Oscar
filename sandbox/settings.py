@@ -20,7 +20,7 @@ ALLOWED_HOSTS = [
 
 # This is needed for the hosted version of the sandbox
 ADMINS = (
-    ('Michael Haigh', 'michael@nutanix.com'),
+    ('Andres Rey', 'andres.rey@nutanix.com'),
 )
 EMAIL_SUBJECT_PREFIX = '[Oscar sandbox] '
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -31,10 +31,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django_201902060613'),
+        'NAME': os.environ.get('DATABASE_NAME', 'oscar_django_202202240214'),
         'USER': os.environ.get('DATABASE_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'ThisIsAVeryLongAndStrongPasswordOK'),
-        'HOST': os.environ.get('DATABASE_HOST', '10.45.100.118'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'nx2Tech637!'),
+        'HOST': os.environ.get('DATABASE_HOST', '10.42.17.215'),
         'PORT': os.environ.get('DATABASE_PORT', '5432'),
         'ATOMIC_REQUESTS': True
     }
@@ -53,7 +53,7 @@ CACHES = {
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
 USE_TZ = True
-TIME_ZONE = 'Europe/London'
+TIME_ZONE = 'Europe/Madrid'
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
