@@ -8,7 +8,7 @@ node("built-in") {
         println commit_id
     
         stage "Build"
-        def oscarApp = docker.build "reymanreyman/oscar_jet"
+        def oscarApp = docker.build "andresrey/oscar_jet"
     
         stage "Publish"
         oscarApp.push 'latest'
