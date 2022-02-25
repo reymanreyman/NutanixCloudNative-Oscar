@@ -15,6 +15,6 @@ node("built-in") {
         oscarApp.push "${commit_id}"
 
         stage "Application Launch"
-        step([$class: 'BlueprintLaunch', appProfileName: 'Default', applicationName: 'NCN_${BUILD_ID}', blueprintDescription: 'Description is empty', blueprintName: 'NutanixCloudNativeWithDatabaseProvisioning', projectName: 'Default', runtimeVariables: '{}', waitForSuccessFulLaunch: true])
+        step([$class: 'BlueprintLaunch', appProfileName: 'Default', applicationName: 'NCN_${BUILD_ID}', blueprintDescription: 'Description is empty', blueprintName: 'NutanixCloudNativeWithDatabaseProvisioning', projectName: 'Default', runtimeVariables: '{}', waitForSuccessFulLaunch: false])
     }
 }
