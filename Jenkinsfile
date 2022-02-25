@@ -1,4 +1,4 @@
-node("docker") {
+node("built-in") {
     docker.withRegistry('', 'dockerhub-cred-andresrey') {
     
         git url: "https://github.com/reymanreyman/NutanixCloudNative-Oscar/"
